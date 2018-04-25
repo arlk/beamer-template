@@ -1,0 +1,73 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{algorithm2e}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{import}
+\usepackage{mathrsfs}
+\usepackage{microtype}
+\usepackage{nicefrac}
+\usepackage{pgfplots}
+\usepackage{psfrag}
+\usepackage{scalerel}
+\usepackage{tikz}
+\usepackage{url}
+% \usetikzlibrary{external}
+% \tikzexternalize[prefix=figures/]
+
+\newcommand{\Bez}{B\'ezier }
+\newcommand{\Co}{{\mathop {\bf Co}}}
+\newcommand{\Expect}{\mathop{\bf E{}}}
+\newcommand{\Prob}{\mathop{\bf Prob}}
+\newcommand{\Rank}{\mathop{\bf Rank}}
+\newcommand{\Tr}{\mathop{\bf Tr}}
+\newcommand{\Vol}{\mathop{\bf vol}}
+\newcommand{\argmax}{\mathop{\rm argmax}}
+\newcommand{\argmin}{\mathop{\rm argmin}}
+\newcommand{\card}{\mathop{\bf card}}
+\newcommand{\cf}{{\it cf.}}
+\newcommand{\conv}{\mathop{\bf conv}}
+\newcommand{\diag}{\mathop{\bf diag}}
+\newcommand{\dist}{\mathop{\bf dist{}}}
+\newcommand{\dom}{\mathop{\bf dom}}
+\newcommand{\eg}{{\it e.g. }}
+\newcommand{\epi}{\mathop{\bf epi}}
+\newcommand{\etc}{{\it etc.}}
+\newcommand{\ie}{{\it i.e.}}
+\newcommand{\integers}{{\mbox{\bf Z}}}
+\newcommand{\intr}{\mathop{\bf int}}
+\newcommand{\nullspace}{{\mathcal N}}
+\newcommand{\ones}{\mathbf 1}
+\newcommand{\prox}{\mathbf{prox}}
+\newcommand{\range}{{\mathcal R}}
+\newcommand{\rank}{\mathop{\bf rank}}
+\newcommand{\reals}{{\mbox{\bf R}}}
+\newcommand{\sign}{\mathop{\bf sign}}
+\newcommand{\symm}{{\mbox{\bf S}}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\vs}{{\it vs }}
+
+\newcommand{\executeiffilenewer}[3]{%
+  \ifnum\pdfstrcmp%
+    {\pdffilemoddate{#1}}%
+    {\pdffilemoddate{#2}}%
+    >0%
+    {\immediate\write18{#3}}%
+  \fi%
+}
+\newcommand{\includesvg}[2][]{%
+  \executeiffilenewer{#1#2.svg}{#1#2.pdf}%
+    {inkscape -z -D --file=#1#2.svg --export-pdf=#1#2.pdf --export-latex}%
+  \subimport{#1}{#2.pdf_tex}%
+}
+
+\definecolor{niceblue}{RGB}{51,51,178}

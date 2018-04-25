@@ -1,0 +1,37 @@
+\mode<presentation>
+{
+\usetheme{default}
+\usecolortheme{default}
+\usefonttheme{serif}
+}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\setbeamertemplate{itemize subitem}{--}
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{frametitle} {
+	\begin{center}
+	  {\large\bf \insertframetitle}
+	\end{center}
+}
+
+\newcommand\footlineon{
+  \setbeamertemplate{footline} {
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,leftskip=.8cm,rightskip=.6cm]{structure}
+      \footnotesize \insertsection
+      \hfill
+      {\insertframenumber}
+    \end{beamercolorbox}
+    \vskip 0.45cm
+  }
+}
+\footlineon
+
+\AtBeginSection[]
+{
+	\begin{frame}<beamer>
+		\frametitle{Outline}
+		\tableofcontents[currentsection,currentsubsection]
+	\end{frame}
+}
+
